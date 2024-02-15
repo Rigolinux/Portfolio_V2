@@ -18,11 +18,9 @@ import CardHeader from './components/CardHeader.vue';
   <div class="md:fixed top-40 left-5 overflow-auto flex items-center justify-center">
     <CardHeader />
   </div>
-  <main class="container p-15 md:columns-2">
-    <div class="md:min-h-100">
-
-    </div>
-    <section class="ml-auto " >
+  <main class="md:container md:p-15 ">
+    
+    <section class="md:w-1/2 md:ml-auto  sm:w-full">
       <router-view />
     </section>
   </main>

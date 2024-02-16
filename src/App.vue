@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import CardHeader from './components/CardHeader.vue';
+import { useI18n } from 'vue-i18n';
+
+const { t, locale } = useI18n();
+locale.value = 'es';
 </script>
 
 <template>
@@ -8,7 +12,7 @@ import CardHeader from './components/CardHeader.vue';
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper ">
-      Hola  a todos
+      {{ t('welcome') }}
 
       <nav>
         <RouterLink to="/">Home</RouterLink>

@@ -4,6 +4,7 @@
 
 export default {
   content: [
+    "./node_modules/flowbite/**/*.js",
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
@@ -12,6 +13,7 @@ export default {
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),
+    require('flowbite/plugin')
   ],
   corePlugins: {
     aspectRatio: false,

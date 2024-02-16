@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import CardHeader from './components/CardHeader.vue';
+import SideBar from './components/SideBar.vue';
 import { useI18n } from 'vue-i18n';
 
 const { t, locale } = useI18n();
@@ -27,6 +28,7 @@ locale.value = 'es';
     <section class="md:w-1/2 md:ml-auto  sm:w-full">
       <router-view />
     </section>
+    <SideBar  />
   </main>
   
 </template>

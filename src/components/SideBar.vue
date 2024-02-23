@@ -10,7 +10,8 @@ const sidebar = useSideBarStore();
 
 <template>
 <div >
-    <div class="fixed left-0 top-0 w-1/5 md:w-3/6 h-full bg-white transition-opacity duration-200 ease-in-out z-10" @click.prevent="sidebar.toggle" v-show="sidebar.IsActive"
+    <div class="fixed left-0 top-0 w-1/5 md:w-3/6 h-full bg-whitet
+     transition-opacity duration-200 ease-in-out z-10" @click.prevent="sidebar.toggle" v-show="sidebar.IsActive"
      :class="{'opacity-75': sidebar.IsActive, 'opacity-0': !sidebar.IsActive}">
         <div class="w-full h-fullopacity-75 z-10"></div>
     </div>

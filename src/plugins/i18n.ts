@@ -6,6 +6,7 @@ export const i18n = createI18n({
     messages: {
         en: {
         welcome: 'Welcome ',
+        Config_Page: 'Config Page ',
         description_1: 'this is my portfolio of projects',
         description_2: 'My name is Bryan Portillo ',
 
@@ -14,6 +15,7 @@ export const i18n = createI18n({
         welcome: 'Bienvenido ',
         description_1: 'este es mi portafolio de proyectos',
         description_2: 'Mi nombre es Bryan Portillo ',
+        Config_Page: 'Configuracion de pagina '
         }
     }
 })

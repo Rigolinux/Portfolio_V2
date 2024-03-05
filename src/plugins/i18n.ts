@@ -12,6 +12,8 @@ export const i18n = createI18n({
             Spanish: 'Spanish',
             English: 'English',
             Save: 'Save',
+            Language: 'Language',
+            Text_Color: 'Text Color',
         },
         es: {
             welcome: 'Bienvenido ',
@@ -21,6 +23,8 @@ export const i18n = createI18n({
             Spanish: 'Español',
             English: 'Ingles',
             Save: 'Guardar',
+            Language: 'Idioma',
+            Text_Color: 'Color de Texto',
 
         }
     }

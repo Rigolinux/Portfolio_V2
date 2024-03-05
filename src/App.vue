@@ -30,9 +30,10 @@ config.setLocale(locale.value);
       <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
       <div class="wrapper ">
         {{ t('welcome') }}
-        <div>
-        <SunIcon v-if="config.Theme == 'Dark'"  @click.prevent="config.setTheme('Light')"  class="w-8 h-8 rounded-sm bg-black" :style="'color:'+ config.textColor"  />
-        <MoonIcon v-if="config.Theme == 'Light'"  @click.prevent="config.setTheme('Dark')"  class="w-8 h-8 bg-white"  :style="'color:'+ config.textColor"  />
+        <div class="fixed top-10  right-5
+          md:right-5 lg:right-20 rounded-md w-10 h-10 text-center flex justify-center items-center" :style="` background-color: ${config.getInvertedColor()};`">
+        <SunIcon v-if="config.Theme == 'Dark'"  @click.prevent="config.setTheme('Light')"  class="w-8 h-8 " :style="'color:'+ config.textColor"  />
+        <MoonIcon v-if="config.Theme == 'Light'"  @click.prevent="config.setTheme('Dark')"  class="w-8 h-8"   :style="'color:'+ config.textColor"  />
         </div>
         <nav>
           <div @click.prevent="sidebar.toggle" class="btn bg-teal-400">

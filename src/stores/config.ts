@@ -63,5 +63,31 @@ export const useConfigStore = defineStore('ConfigDialog', () => {
         localStorage.setItem('configOptions', JSON.stringify(options));
     }
 
-    return { textColor, Theme, setCurretOptions, getAllOptions, saveOptions, configDialog, handleConfigDialog, Locale, setLocale,setTheme}
+    const getCurrentColorTxt = (): string => {
+        return Theme.value === 'Dark' ? 'color :white' : 'color :black';
+    };
+
+    const getCurrentColorBg = (): string => {
+        return Theme.value === 'Dark' ? 'background-color :black' : 'background-color :white';
+    }
+
+    const getInvertedColor = (): string => {
+        return Theme.value === 'Dark' ? 'white' : 'black';
+    }
+
+    return { 
+                textColor, 
+                Theme, 
+                Locale, 
+                configDialog, 
+                setCurretOptions, 
+                setTheme,
+                setLocale,
+                getAllOptions,
+                getCurrentColorTxt,
+                getCurrentColorBg, 
+                getInvertedColor,
+                saveOptions, 
+                handleConfigDialog, 
+            }
 })

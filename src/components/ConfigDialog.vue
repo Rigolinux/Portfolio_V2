@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { XMarkIcon} from "@heroicons/vue/24/outline";
+import { XMarkIcon } from "@heroicons/vue/24/outline";
 import { useConfigStore } from '@/stores/config';
 import { ref } from 'vue';
 import { useI18n } from "vue-i18n";
-
 const config = useConfigStore();
 
 const { t, locale } = useI18n();
 
 const Lenguajes = ref([
-    { id: 1, name: 'Spanish', value: 'es' },
-    { id: 2, name: 'English', value: 'en' }, 
+    { id: 1, name: t('Spanish'), value: 'es' },
+    { id: 2, name: t('English'), value: 'en' }, 
 ]);
+
 
 const Colors = ref([
     { id: 1, name: 'CusGreen', value: '#28e98c' , selected: true},
@@ -26,14 +26,22 @@ const Colors = ref([
  
 ]);
 
-const setupSelectedColor = (id: number) => {
-    Colors.value.forEach((color) => {
-        if (color.id === id) {
-            color.selected = true;
+const setupSelectedColor = (color : object) => {
+    config.textColor = color.value;
+    Colors.value.forEach((colorData) => {
+        if (colorData.id === color.id) {
+            colorData.selected = true;
         } else {
-            color.selected = false;
+            colorData.selected = false;
         }
+        return colorData;
     });
+};
+
+const setConfigValues = () => {
+    locale.value = config.Locale;
+    config.saveOptions();
+    config.handleConfigDialog();
 };
 
 </script>
@@ -51,7 +59,7 @@ const setupSelectedColor = (id: number) => {
 
             <div>
                 <label for="lenguaje" class="block text-sm font-medium  text-gray-700 dark:text-gray-400">Lenguaje</label>
-                <select v-model="locale" id="lenguaje" name="lenguaje" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 text-white bg-black focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                <select v-model="config.Locale" id="lenguaje" name="lenguaje" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 text-white bg-black focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
                     <option v-for="lenguaje in Lenguajes" :key="lenguaje.id" :value="lenguaje.value">{{ lenguaje.name }}</option>
                 </select>
             </div>
@@ -59,7 +67,7 @@ const setupSelectedColor = (id: number) => {
             <div class="mt-4">
                 <label for="color" class="block text-sm font-medium  text-gray-700 dark:text-gray-400">Color</label>
                 <div class="flex justify-between items-center">
-                    <div v-for="color in Colors" @click="setupSelectedColor(color.id)" 
+                    <div v-for="color in Colors" @click="setupSelectedColor(color)" 
                     :key="color.id" class="w-8 h-8 rounded-full cursor-pointer flex justify-center items-center" :style="{ backgroundColor: color.value, border: color.selected ? '2px solid #000' : 'none', }"
                     >
                     <div v-if="color.selected" class="  w-1 h-1  bg-black rounded-full">
@@ -68,10 +76,9 @@ const setupSelectedColor = (id: number) => {
                   </div>
                 </div>
             </div>
-
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-            <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Read more
+            <a @click.prevent="setConfigValues" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                {{t('Save')}}
                 
             </a>
         </div>

@@ -26,7 +26,14 @@ const Colors = ref([
  
 ]);
 
-const setupSelectedColor = (color : object) => {
+interface Color {
+    id: number;
+    name: string;
+    value: string;
+    selected: boolean;
+}
+
+const setupSelectedColor = (color : Color) => {
     config.textColor = color.value;
     Colors.value.forEach((colorData) => {
         if (colorData.id === color.id) {
@@ -38,6 +45,18 @@ const setupSelectedColor = (color : object) => {
     });
 };
 
+const findCol = (color: string) => {
+     const founded = Colors.value.find((col) => col.value === color);
+
+     if(founded){
+         setupSelectedColor(founded);
+     }
+
+};
+
+findCol(config.textColor);
+
+
 const setConfigValues = () => {
     locale.value = config.Locale;
     config.saveOptions();
@@ -48,36 +67,46 @@ const setConfigValues = () => {
 
 <template>
     <transition name="dialog-fade" mode="out-in">
-        <div v-show="config.configDialog" class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div v-show="config.configDialog" class="max-w-sm p-6 shadow border border-gray-200 rounded-lg" :style="config.Theme == 'Dark' ? 'background-color:black' : 'background-color:white'" >
             <div class="flex flex-col items-end mr-2">
             <button class="btn" @click.prevent="config.handleConfigDialog" >
-                <XMarkIcon class="w-6 h-6 text-white" />
+                <XMarkIcon class="w-6 h-6" :style="config.getCurrentColorTxt()"  />
             </button>
             </div>
             
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ t('Config_Page') }}</h5>
+            <h5 class="mb-2 text-2xl font-bold tracking-tight "
+            :style="'color:'+ config.textColor"
+            >{{ t('Config_Page') }}</h5>
 
             <div>
-                <label for="lenguaje" class="block text-sm font-medium  text-gray-700 dark:text-gray-400">Lenguaje</label>
-                <select v-model="config.Locale" id="lenguaje" name="lenguaje" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 text-white bg-black focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                <label for="lenguaje" class="block text-sm font-medium  text-gray-700 dark:text-gray-400"
+                :style="config.getCurrentColorTxt()"
+                >{{ t('Language') }}</label>
+                <select v-model="config.Locale" id="lenguaje" name="lenguaje" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
+                :style="`${config.getCurrentColorTxt()} ;${config.getCurrentColorBg()}`"
+                >
                     <option v-for="lenguaje in Lenguajes" :key="lenguaje.id" :value="lenguaje.value">{{ lenguaje.name }}</option>
                 </select>
             </div>
 
             <div class="mt-4">
-                <label for="color" class="block text-sm font-medium  text-gray-700 dark:text-gray-400">Color</label>
-                <div class="flex justify-between items-center">
+                <label for="color" class="block text-sm font-medium  text-gray-700 dark:text-gray-400"
+                :style="config.getCurrentColorTxt()"
+                >{{ t('Text_Color') }}</label>
+                <div class="flex flex-wrap justify-between items-center mt-2 ">
                     <div v-for="color in Colors" @click="setupSelectedColor(color)" 
-                    :key="color.id" class="w-8 h-8 rounded-full cursor-pointer flex justify-center items-center" :style="{ backgroundColor: color.value, border: color.selected ? '2px solid #000' : 'none', }"
+                    :key="color.id" class="w-8 h-8  rounded-full cursor-pointer flex  m-1 justify-center items-center" :style="{ backgroundColor: color.value, border: color.selected ? 
+                    ` 2px solid ${config.getInvertedColor()}` : 'none', }"
                     >
-                    <div v-if="color.selected" class="  w-1 h-1  bg-black rounded-full">
+                    <div v-if="color.selected" class="  w-1 h-1   rounded-full"
+                        :style="` background-color: ${config.getInvertedColor()}`"
+                    >
 
                     </div>
                   </div>
                 </div>
             </div>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-            <a @click.prevent="setConfigValues" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            <a @click.prevent="setConfigValues" class="mt-3 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 {{t('Save')}}
                 
             </a>

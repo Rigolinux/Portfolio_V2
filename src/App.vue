@@ -23,10 +23,12 @@ config.setLocale(locale.value);
 </script>
 
 <template>
-  <div >
+  <div
+    :class="config.Theme == 'Dark' ? 'dark' : ''"
+  >
 
-    <MainView />
-      <SideBar  />
+    <MainView  />
+    <SideBar  />
     
     <div
     class="fixed top-0 left-0 w-full h-full flex items-center justify-center transition-opacity duration-500 ease-in-out"
@@ -34,7 +36,7 @@ config.setLocale(locale.value);
     v-show="config.configDialog"
     style="background-color: rgba(255, 255, 255, 0.75)"
     >
-      <ConfigDialog />
+      <ConfigDialog  />
     </div>
   </div>
 

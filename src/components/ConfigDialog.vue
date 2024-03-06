@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { XMarkIcon } from "@heroicons/vue/24/outline";
 import { useConfigStore } from '@/stores/config';
-import { ref } from 'vue';
+import { ref, } from 'vue';
 import { useI18n } from "vue-i18n";
 const config = useConfigStore();
 
@@ -11,6 +11,7 @@ const Lenguajes = ref([
     { id: 1, name: t('Spanish'), value: 'es' },
     { id: 2, name: t('English'), value: 'en' }, 
 ]);
+
 
 
 const Colors = ref([
@@ -32,9 +33,10 @@ interface Color {
     value: string;
     selected: boolean;
 }
-
+const currentColor = ref(config.textColor);
 const setupSelectedColor = (color : Color) => {
-    config.textColor = color.value;
+    currentColor.value = color.value;
+    //config.textColor = color.value;
     Colors.value.forEach((colorData) => {
         if (colorData.id === color.id) {
             colorData.selected = true;
@@ -58,10 +60,13 @@ findCol(config.textColor);
 
 
 const setConfigValues = () => {
+    config.textColor = currentColor.value;
     locale.value = config.Locale;
     config.saveOptions();
     config.handleConfigDialog();
+    document.documentElement.style.setProperty('--text-color', config.textColor );
 };
+
 
 </script>
 

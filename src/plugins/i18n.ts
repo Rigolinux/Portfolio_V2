@@ -14,6 +14,8 @@ export const i18n = createI18n({
             Save: 'Save',
             Language: 'Language',
             Text_Color: 'Text Color',
+            Navigation: 'Navigation',
+            SoftEng: 'Software Engineer',
         },
         es: {
             welcome: 'Bienvenido ',
@@ -25,7 +27,8 @@ export const i18n = createI18n({
             Save: 'Guardar',
             Language: 'Idioma',
             Text_Color: 'Color de Texto',
-
+            Navigation: 'Navegacion',
+            SoftEng: 'Ingeniero de Software',
         }
     }
 })

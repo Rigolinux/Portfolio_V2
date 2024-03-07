@@ -30,9 +30,9 @@ document.documentElement.style.setProperty('--text-color', config.textColor );
 <template>
     <div :style="config.Theme == 'Dark' ? 'background-color:black' : 'background-color:white'" >
         <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-        <div class="md:fixed top-40 left-5 overflow-auto flex items-center justify-center">
+        <div class="md:fixed md:top-40 p-10 md:left-5 overflow-auto flex items-center justify-center">
+          <CardHeader />
         </div>
-        <CardHeader />
         <main class="md:container md:p-15 ">
         
         <section class="md:w-1/2 md:ml-auto  sm:w-full">
@@ -72,4 +72,10 @@ document.documentElement.style.setProperty('--text-color', config.textColor );
 .hoverable:hover {
   color: var(--text-color);
 }
+
+.hoverable-borders:hover{
+  border-color: var(--text-color);
+}
+
+
 </style>

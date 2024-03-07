@@ -1,13 +1,22 @@
 <script setup lang="ts">
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
+
 </script>
 
 <template>
   
 
-<div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    <a href="#">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+<div class=" max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <a href="#" class="w-full flex justify-between items-center text-center">
+        <h1 class="mb-2 text-2xl font-bold tracking-tight  text-gray-900 text-left dark:text-white">Rigoberto</h1>
+        <h5 class="mb-2  font-bold tracking-tight text-base text-gray-900 text-right dark:text-white">{{ t('SoftEng') }}</h5>
     </a>
+    <div class="w-full flex justify-center items-center ">
+        <img src="https://dhujijuorqbcfrqbdjqo.supabase.co/storage/v1/object/public/PortfolioBucket/portfolioImages/1685065428105.jpg?t=2024-03-07T16%3A53%3A46.713Z"
+         alt="profile" class="w-3/4 h-full object-cover rounded-full" />
+    </div>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
     <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
         Read more

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import {  RouterView } from 'vue-router'
+import HomeView from '@/views/HomeView.vue';
+import ExperienceView from '@/views/ExperienceView.vue';
 import CardHeader from '@/components/CardHeader.vue';
 
 import { useI18n } from 'vue-i18n';
@@ -28,15 +29,16 @@ document.documentElement.style.setProperty('--text-color', config.textColor );
 
 
 <template>
-    <div :style="config.Theme == 'Dark' ? 'background-color:black' : 'background-color:white'" >
+    <div :class="config.Theme == 'Dark' ? 'bg-gray-900' : 'bg-white'" >
         <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
         <div class="md:fixed md:top-40 p-10 md:left-5 overflow-auto flex items-center justify-center">
           <CardHeader />
         </div>
         <main class="md:container md:p-15 ">
         
-        <section class="md:w-1/2 md:ml-auto  sm:w-full">
-            <router-view />
+        <section class="md:w-1/2 md:ml-auto  sm:w-full">         
+           <ExperienceView />
+           <HomeView />
         </section>
     
         </main>
@@ -77,5 +79,8 @@ document.documentElement.style.setProperty('--text-color', config.textColor );
   border-color: var(--text-color);
 }
 
+.custom-text-color{
+  color: var(--text-color) !important;
+}
 
 </style>

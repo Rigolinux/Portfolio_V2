@@ -27,6 +27,7 @@ config.setLocale(locale.value);
     :class="config.Theme == 'Dark' ? 'dark' : ''"
   >
 
+    
     <MainView  />
     <SideBar  />
     

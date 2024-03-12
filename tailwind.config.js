@@ -12,15 +12,15 @@ export default {
   theme: {
     extend: {},
     colors: {
-        CusGreen: '#28e98c',
-        CusYellow: '#e4af12',
-        CusOrange: '#fe6f1d',
-        Cuslight_blue: '#14c5fd',
-        CusPurple: '#a14cfb',
-        CusRed: '#f31313',
-        CusPink: '#ff99cc',
-        CusGrey: '#c0c0c0',
-        CusBlue: '#1338f3',
+        CusGreen: "#28e98c",
+        CusYellow: "#e4af12",
+        CusOrange: "#fe6f1d",
+        Cuslight_blue: "#14c5fd",
+        CusPurple: "#a14cfb",
+        CusRed: "#f31313",
+        CusPink: "#ff99cc",
+        CusGrey: "#c0c0c0",
+        CusBlue: "#1338f3",
     }
   },
   plugins: [

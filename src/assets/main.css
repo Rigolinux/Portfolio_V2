@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
+
 @tailwind utilities;
+
+@layer utilities {
+    .hoverable:hover {
+        color: var(--text-color);
+      }
+      
+      .hoverable-borders:hover{
+        border-color: var(--text-color);
+      }
+      
+      .custom-text-color{
+        color: var(--text-color) !important;
+      }
+      
+      .hoverable-background:hover{
+        background-color: var(--text-color);
+      }
+
+      .parent:hover .son-background{
+        background-color: var(--text-color);
+        opacity: 1;
+
+      }
+    .parent:hover .son-color{
+        color: var(--text-color);
+    }
+      
+}

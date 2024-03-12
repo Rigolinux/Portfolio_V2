@@ -65,6 +65,7 @@ const setConfigValues = () => {
     config.saveOptions();
     config.handleConfigDialog();
     document.documentElement.style.setProperty('--text-color', config.textColor );
+  
 };
 
 

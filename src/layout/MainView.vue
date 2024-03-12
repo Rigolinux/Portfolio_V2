@@ -2,11 +2,13 @@
 import HomeView from '@/views/HomeView.vue';
 import ExperienceView from '@/views/ExperienceView.vue';
 import CardHeader from '@/components/CardHeader.vue';
+import HistoryView from '@/views/HistoryView.vue';
 
 import { useI18n } from 'vue-i18n';
 import { useSideBarStore } from '@/stores/sideBar';
 import { SunIcon, MoonIcon, Cog8ToothIcon, Bars3Icon } from "@heroicons/vue/24/outline";
 import { useConfigStore } from '@/stores/config';
+
 
 
 
@@ -20,8 +22,11 @@ let storedConfigOptions = localStorage.getItem('configOptions');
 const configOptions = storedConfigOptions ? JSON.parse(storedConfigOptions) : null;
 locale.value = configOptions && configOptions.locale ? configOptions.locale : 'es';
 config.setLocale(locale.value);
-console.log(config.textColor);
+
 document.documentElement.style.setProperty('--text-color', config.textColor );
+
+
+
 
 
 
@@ -39,6 +44,7 @@ document.documentElement.style.setProperty('--text-color', config.textColor );
         <section class="md:w-1/2 md:ml-auto  sm:w-full">         
            <ExperienceView />
            <HomeView />
+           <HistoryView   />
         </section>
     
         </main>
@@ -71,16 +77,7 @@ document.documentElement.style.setProperty('--text-color', config.textColor );
 </template>
 
 <style >
-.hoverable:hover {
-  color: var(--text-color);
-}
 
-.hoverable-borders:hover{
-  border-color: var(--text-color);
-}
 
-.custom-text-color{
-  color: var(--text-color) !important;
-}
 
 </style>

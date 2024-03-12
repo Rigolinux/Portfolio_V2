@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useConfigStore } from '@/stores/config';
+
 
 
 
@@ -9,7 +9,7 @@ import { useConfigStore } from '@/stores/config';
 
 <div class="parent" > 
     <div class="flex" >
-        <div class="h-7 w-7 son-background rounded-full dark:bg-white bg-gray-700 opacity-15  "
+        <div class="h-6 w-6 son-background rounded-full dark:bg-white bg-gray-700 opacity-15  "
             
         >
         </div>
@@ -19,7 +19,7 @@ import { useConfigStore } from '@/stores/config';
             Example
         </div>
     </div>
-    <div class="border-l-2 ml-2  border-circle  opacity-15 dark:bg-white">
+    <div class="border-l-2 ml-3 border-gray-200 dark:border-gray-700  border-circle   dark:text-white ">
         <div>Header </div>
         <div>
             datos titulo

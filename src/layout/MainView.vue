@@ -44,7 +44,7 @@ document.documentElement.style.setProperty('--text-color', config.textColor );
         <section class="md:w-1/2 md:ml-auto  sm:w-full">         
            <ExperienceView />
            <HomeView />
-           <HistoryView   />
+           <HistoryView  v-motion-slide-visible-right :delay="600" />
         </section>
     
         </main>

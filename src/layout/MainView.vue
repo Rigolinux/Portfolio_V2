@@ -66,11 +66,11 @@ document.documentElement.style.setProperty('--text-color', config.textColor );
         </div>
         <div class="fixed top-10 left-5 flex 
           md:left-15 lg:left-20">
-            <div @click.prevent="sidebar.toggle" class="dark:text-white w-10 h-10 text-center flex justify-center items-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div :title="t('menu')" @click.prevent="sidebar.toggle" class="dark:text-white w-10 h-10 text-center flex justify-center items-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <Bars3Icon class="w-8 h-8 hoverable" />
             </div>
      
-            <div @click.prevent="config.handleConfigDialog" class=" dark:text-white ml-3 w-10 h-10 text-center flex justify-center items-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div :title="configOptions.locale == 'es' ? 'Configuracion': 'Settings'" @click.prevent="config.handleConfigDialog" class=" dark:text-white ml-3 w-10 h-10 text-center flex justify-center items-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <Cog8ToothIcon class="w-8 h-8 hoverable" />
             </div>
         </div>

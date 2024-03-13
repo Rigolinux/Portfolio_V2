@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-
+import { Experience } from '@/data/Experience';
+import HistoryResume from '@/components/HistoryResume.vue';
 
 
 
@@ -7,25 +8,18 @@
 
 <template>
 
-<div class="parent" > 
-    <div class="flex" >
-        <div class="h-6 w-6 son-background rounded-full dark:bg-white bg-gray-700 opacity-15  "
-            
-        >
-        </div>
-        <div class="ml-3 son-color dark:text-white text-gray-700 "
-          
-        >
-            Example
-        </div>
+    <div v-for="(item,index) in Experience" :key="index"  >
+        <HistoryResume :info="item" 
+            v-if="(index+1) % 2 === 0" 
+            v-motion-slide-visible-right 
+            :delay="600" 
+        />
+        <HistoryResume :info="item" 
+            v-else 
+            v-motion-slide-visible-left 
+            :delay="600" 
+        />
     </div>
-    <div class="border-l-2 ml-3 border-gray-200 dark:border-gray-700  border-circle   dark:text-white ">
-        <div>Header </div>
-        <div>
-            datos titulo
-        </div>
-    </div>
-</div>
 
 
 </template>

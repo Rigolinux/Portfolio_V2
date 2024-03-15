@@ -3,7 +3,7 @@ import HomeView from '@/views/HomeView.vue';
 import ExperienceView from '@/views/ExperienceView.vue';
 import CardHeader from '@/components/CardHeader.vue';
 import HistoryView from '@/views/HistoryView.vue';
-
+import BoxExpecialization from '@/components/BoxExpecialization.vue';
 import { useI18n } from 'vue-i18n';
 import { useSideBarStore } from '@/stores/sideBar';
 import { SunIcon, MoonIcon, Cog8ToothIcon, Bars3Icon } from "@heroicons/vue/24/outline";
@@ -49,6 +49,9 @@ document.documentElement.style.setProperty('--text-color', config.textColor );
            <div class="mt-5" >
              <HistoryView  />
            </div>
+           <div class="mt-5" >
+             <BoxExpecialization />
+            </div>
         </section>
     
         </main>

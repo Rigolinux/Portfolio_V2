@@ -16,8 +16,8 @@ const props = defineProps<Props>()
 </script> 
 
 <template>
-
-<div class="parent" > 
+<div class="flex justify-center items-center">
+<div class="parent lg:w-full w-4/5 " > 
     <div class="flex" >
         <div class="h-6 w-6 son-background rounded-full dark:bg-white bg-gray-700 opacity-15  "
             
@@ -40,7 +40,7 @@ const props = defineProps<Props>()
         </div>
     </div>
 </div>
-
+</div>
 
 </template>
 

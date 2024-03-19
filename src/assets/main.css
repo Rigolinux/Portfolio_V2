@@ -28,6 +28,9 @@
       .parent:hover .son-color{
           color: var(--text-color);
       }
+      .parent-shadow:hover {
+        box-shadow: var(--text-color) 0px 8px 24px;
+      }
 
       
       

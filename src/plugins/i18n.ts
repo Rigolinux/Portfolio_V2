@@ -21,6 +21,12 @@ export const i18n = createI18n({
             description_3: 'I design and code beautifully simple things and i love what i do. Just simple like that!',
             years_experience: 'Years of experience',
             completed_projects: 'Completed Projects',
+            Deployment_Hosting: 'Deployment and Hosting',
+            Database_Design: 'Database Design',
+            Web_Development: 'Web Development',
+            Web_Desc: 'Web development is the work involved in developing a website for the Internet or an intranet.',
+            Databasw_Desc: 'Database design is the process of producing a detailed data model of a database.',
+            Deploy_Desc: 'Deployment and hosting refers to the process of publishing a web application so that it is accessible to the world.',
         },
         es: {
             welcome: 'Bienvenido ',
@@ -38,6 +44,12 @@ export const i18n = createI18n({
             SoftEng: 'Ingeniero de Software',
             description_3: 'Diseño y codifico cosas simples y me encanta cunado lo hago. ¡Asi de simple!',
             years_experience: 'Años de experiencia',
+            Deployment_Hosting: 'Despliegue y Hosting',
+            Database_Design: 'Diseño de Base de Datos',
+            Web_Development: 'Desarrollo Web',
+            Web_Desc: 'El desarrollo web es el trabajo involucrado en el desarrollo de un sitio web para Internet o una intranet.',
+            Databasw_Desc: 'El diseño de bases de datos es el proceso de producir un diseño detallado de la base de datos.',
+            Deploy_Desc: 'El despliegue y el hosting se refieren al proceso de publicar una aplicación web para que sea accesible para el mundo.',
         }
     }
 })

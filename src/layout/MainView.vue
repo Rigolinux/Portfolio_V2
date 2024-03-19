@@ -8,6 +8,7 @@ import { useI18n } from 'vue-i18n';
 import { useSideBarStore } from '@/stores/sideBar';
 import { SunIcon, MoonIcon, Cog8ToothIcon, Bars3Icon } from "@heroicons/vue/24/outline";
 import { useConfigStore } from '@/stores/config';
+import { onMounted, ref } from 'vue';
 
 
 
@@ -17,11 +18,9 @@ const config = useConfigStore();
 
 config.setCurretOptions();
 
-const { t,locale } = useI18n();
-let storedConfigOptions = localStorage.getItem('configOptions');
-const configOptions = storedConfigOptions ? JSON.parse(storedConfigOptions) : null;
-locale.value = configOptions && configOptions.locale ? configOptions.locale : 'es';
-config.setLocale(locale.value);
+const { t } = useI18n();
+
+
 
 document.documentElement.style.setProperty('--text-color', config.textColor );
 
@@ -73,7 +72,7 @@ document.documentElement.style.setProperty('--text-color', config.textColor );
                 <Bars3Icon class="w-8 h-8 hoverable" />
             </div>
      
-            <div :title="configOptions.locale == 'es' ? 'Configuracion': 'Settings'" @click.prevent="config.handleConfigDialog" class=" dark:text-white ml-3 w-10 h-10 text-center flex justify-center items-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div  @click.prevent="config.handleConfigDialog" class=" dark:text-white ml-3 w-10 h-10 text-center flex justify-center items-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <Cog8ToothIcon class="w-8 h-8 hoverable" />
             </div>
         </div>

@@ -5,6 +5,7 @@ import { useI18n } from 'vue-i18n';
 
 import MainView from '@/layout/MainView.vue';
 import { useConfigStore } from '@/stores/config';
+import { onMounted } from 'vue';
 
 
 
@@ -13,10 +14,26 @@ const config = useConfigStore();
 config.setCurretOptions();
 
 const { locale } = useI18n();
-let storedConfigOptions = localStorage.getItem('configOptions');
-const configOptions = storedConfigOptions ? JSON.parse(storedConfigOptions) : null;
-locale.value = configOptions && configOptions.locale ? configOptions.locale : 'es';
-config.setLocale(locale.value);
+let storedConfigOptions = localStorage.getItem('configOptions') || null;
+onMounted(() => {
+  console.log('mounted');
+  if (storedConfigOptions) {
+    const configOptions = JSON.parse(storedConfigOptions);
+    if (configOptions) {
+      locale.value = configOptions.locale ? configOptions.locale : 'es';
+      config.setLocale(locale.value);
+    }
+    else {
+      locale.value = 'es';
+      config.setLocale(locale.value);
+    }
+  }
+  else {
+    locale.value = 'es';
+    config.setLocale(locale.value);
+  }
+});
+
 
 
 

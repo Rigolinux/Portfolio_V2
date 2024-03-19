@@ -8,7 +8,6 @@ import { useI18n } from 'vue-i18n';
 import { useSideBarStore } from '@/stores/sideBar';
 import { SunIcon, MoonIcon, Cog8ToothIcon, Bars3Icon } from "@heroicons/vue/24/outline";
 import { useConfigStore } from '@/stores/config';
-import { onMounted, ref } from 'vue';
 
 
 

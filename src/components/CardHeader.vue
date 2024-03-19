@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-
+import IconsMdi from "./IconsMdi.vue";
 const { t } = useI18n();
+import { mdiGithub,  mdiLinkedin  } from '@mdi/js';
 
 </script>
 
 <template>
   
 
-<div class=" max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+<div class="shadow-2xl max-w-sm p-6 bg-white border border-gray-200 rounded-lg  dark:bg-gray-800 dark:border-gray-700">
     <a href="#" class="w-full flex justify-between items-center text-center">
         <h1 class="mb-2 text-2xl font-bold tracking-tight  text-gray-900 text-left dark:text-white">Rigoberto</h1>
         <h5 class="mb-2  font-bold tracking-tight text-base text-gray-900 text-right dark:text-white">{{ t('SoftEng') }}</h5>
@@ -24,6 +25,16 @@ const { t } = useI18n();
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
         </svg>
     </a>
+    <div class="flex justify-evenly items-center mt-4 dark:text-white text-gray-700 ">
+        <div class="w-12 rounded-full hoverable-borders h-12 flex justify-center items-center border   hoverable hover:cursor-pointer ">
+                <IconsMdi type="mdi" :path="mdiGithub" />
+        </div>
+        <div class="w-12 rounded-full hoverable-borders h-12 flex justify-center items-center border   hoverable hover:cursor-pointer ">
+                <IconsMdi type="mdi" :path="mdiLinkedin" />
+        </div>
+        
+    </div>
+    
 </div>
 
 

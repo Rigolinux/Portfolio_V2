@@ -33,7 +33,7 @@ document.documentElement.style.setProperty('--bg-color', config.Theme == 'Dark' 
 
 
 <template>
-    <div :class="config.Theme == 'Dark' ? 'bg-gray-900' : 'bg-white'" >
+    <div class="pb-20" :class="config.Theme == 'Dark' ? 'bg-gray-900' : 'bg-white'" >
      
         <div class="md:fixed md:top-40 p-10 md:left-5 overflow-auto flex items-center justify-center mt-10">
           <CardHeader />
@@ -60,24 +60,25 @@ document.documentElement.style.setProperty('--bg-color', config.Theme == 'Dark' 
         <header>
      
       <div class="wrapper ">
-        {{ t('welcome') }}
-        <div class="fixed top-10  right-5
-          md:right-5 lg:right-20  rounded-md w-10 h-10 text-center flex justify-center items-center
+      
+        <div class="fixed top-10 left-5 flex justify-between
+        md:left-15 lg:left-20">
+        <div class="flex">
+          <div :title="t('menu')" @click.prevent="sidebar.toggle" class="dark:text-white w-10 h-10 text-center flex justify-center items-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <Bars3Icon class="w-8 h-8 hoverable" />
+          </div>
+          
+          <div  @click.prevent="config.handleConfigDialog" class=" dark:text-white ml-3 w-10 h-10 text-center flex justify-center items-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <Cog8ToothIcon class="w-8 h-8 hoverable" />
+          </div>
+        </div>
+        <div class=" rounded-md w-10 h-10 text-center flex justify-center items-center ml-3
           " 
          
           :style="` background-color: ${config.getInvertedColor()};`">
         <SunIcon v-if="config.Theme == 'Dark'"  @click.prevent="config.setTheme('Light');"  class="w-8 h-8 text-black hoverable"    />
         <MoonIcon v-if="config.Theme == 'Light'"  @click.prevent="config.setTheme('Dark'); "  class="w-8 h-8 text-white hoverable"     />
         </div>
-        <div class="fixed top-10 left-5 flex 
-          md:left-15 lg:left-20">
-            <div :title="t('menu')" @click.prevent="sidebar.toggle" class="dark:text-white w-10 h-10 text-center flex justify-center items-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <Bars3Icon class="w-8 h-8 hoverable" />
-            </div>
-     
-            <div  @click.prevent="config.handleConfigDialog" class=" dark:text-white ml-3 w-10 h-10 text-center flex justify-center items-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <Cog8ToothIcon class="w-8 h-8 hoverable" />
-            </div>
         </div>
       
       </div>

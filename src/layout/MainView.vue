@@ -33,21 +33,21 @@ document.documentElement.style.setProperty('--text-color', config.textColor );
 
 <template>
     <div :class="config.Theme == 'Dark' ? 'bg-gray-900' : 'bg-white'" >
-        <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-        <div class="md:fixed md:top-40 p-10 md:left-5 overflow-auto flex items-center justify-center">
+     
+        <div class="md:fixed md:top-40 p-10 md:left-5 overflow-auto flex items-center justify-center mt-10">
           <CardHeader />
         </div>
         <main class="md:container md:p-15 ">
         
-        <section class="md:w-1/2 md:ml-auto  sm:w-full">         
+        <section class="md:w-1/2 md:ml-auto  sm:w-full pt-10">         
            <ExperienceView />
-           <div class="mt-5" >
+           <div class="mt-2" >
               <HomeView />
            </div>
-           <div class="mt-5" >
+           <div class="mt-2" >
              <HistoryView  />
            </div>
-           <div class="mt-5" >
+           <div class="mt-2" >
              <ExpecializationView />
             </div>
         </section>

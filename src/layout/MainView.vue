@@ -4,6 +4,7 @@ import ExperienceView from '@/views/ExperienceView.vue';
 import CardHeader from '@/components/CardHeader.vue';
 import HistoryView from '@/views/HistoryView.vue';
 import ExpecializationView from '@/views/ExpecializationView.vue';
+import CircleBar from '@/components/CircleBar.vue';
 import { useI18n } from 'vue-i18n';
 import { useSideBarStore } from '@/stores/sideBar';
 import { SunIcon, MoonIcon, Cog8ToothIcon, Bars3Icon } from "@heroicons/vue/24/outline";
@@ -22,7 +23,7 @@ const { t } = useI18n();
 
 
 document.documentElement.style.setProperty('--text-color', config.textColor );
-
+document.documentElement.style.setProperty('--bg-color', config.Theme == 'Dark' ? 'rgb(17 24 39)' : '#ffff');
 
 
 
@@ -50,6 +51,9 @@ document.documentElement.style.setProperty('--text-color', config.textColor );
            <div class="mt-2" >
              <ExpecializationView />
             </div>
+          <div class="mt-2" >
+            <CircleBar />
+          </div>
         </section>
     
         </main>

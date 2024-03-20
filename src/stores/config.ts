@@ -40,6 +40,8 @@ export const useConfigStore = defineStore('ConfigDialog', () => {
         const preSets:ConfigOptions = JSON.parse(localStorage.getItem('configOptions') || '{}');
         preSets.Theme = theme;
         localStorage.setItem('configOptions', JSON.stringify(preSets));
+        document.documentElement.style.setProperty('--bg-color', theme == 'Dark' ? 'rgb(17 24 39)' : '#ffff');
+
         
     };
     const getAllOptions = (): ConfigOptions => {
@@ -72,6 +74,7 @@ export const useConfigStore = defineStore('ConfigDialog', () => {
     }
 
     const getInvertedColor = (): string => {
+
         return Theme.value === 'Dark' ? 'white' : 'black';
     }
 

@@ -4,6 +4,9 @@ import IconsMdi from "./IconsMdi.vue";
 const { t } = useI18n();
 import { mdiGithub,  mdiLinkedin  } from '@mdi/js';
 
+const openInNewTab = (url: string) => {
+    window.open(url, '_blank');
+}
 </script>
 
 <template>
@@ -26,10 +29,15 @@ import { mdiGithub,  mdiLinkedin  } from '@mdi/js';
         </svg>
     </a>
     <div class="flex justify-evenly items-center mt-4 dark:text-white text-gray-700 ">
-        <div class="w-12 rounded-full hoverable-borders h-12 flex justify-center items-center border   hoverable hover:cursor-pointer ">
+           
+        <div class="w-12 rounded-full hoverable-borders h-12 flex justify-center items-center border   hoverable hover:cursor-pointer "
+            @click.prevent="openInNewTab('https://github.com/Rigolinux')"
+        >
                 <IconsMdi type="mdi" :path="mdiGithub" />
         </div>
-        <div class="w-12 rounded-full hoverable-borders h-12 flex justify-center items-center border   hoverable hover:cursor-pointer ">
+        <div class="w-12 rounded-full hoverable-borders h-12 flex justify-center items-center border   hoverable hover:cursor-pointer "
+            @click.prevent="openInNewTab('https://www.linkedin.com/in/bryan-portillo-589a2b21a/')"
+        >
                 <IconsMdi type="mdi" :path="mdiLinkedin" />
         </div>
         

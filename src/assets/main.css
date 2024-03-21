@@ -32,6 +32,10 @@
         box-shadow: var(--text-color) 0px 8px 24px;
       }
 
+      .custom-bg {
+        background-color: var(--text-color);
+      }
+
       
       
 }

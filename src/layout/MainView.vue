@@ -4,7 +4,7 @@ import ExperienceView from '@/views/ExperienceView.vue';
 import CardHeader from '@/components/CardHeader.vue';
 import HistoryView from '@/views/HistoryView.vue';
 import ExpecializationView from '@/views/ExpecializationView.vue';
-import RectangleBar from '@/components/RectangleBar.vue';
+import LanguagesView from '@/views/LanguagesView.vue';
 import { useI18n } from 'vue-i18n';
 import { useSideBarStore } from '@/stores/sideBar';
 import { SunIcon, MoonIcon, Cog8ToothIcon, Bars3Icon } from "@heroicons/vue/24/outline";
@@ -52,7 +52,7 @@ document.documentElement.style.setProperty('--bg-color', config.Theme == 'Dark' 
              <ExpecializationView />
             </div>
           <div class="mt-2" >
-            <RectangleBar />
+            <LanguagesView />
           </div>
         </section>
     

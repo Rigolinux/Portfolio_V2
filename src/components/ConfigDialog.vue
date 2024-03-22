@@ -73,7 +73,7 @@ const setConfigValues = () => {
 
 <template>
     <transition name="dialog-fade" mode="out-in">
-        <div v-show="config.configDialog" class="max-w-sm p-6 shadow border border-gray-200 rounded-lg" :style="config.Theme == 'Dark' ? 'background-color:black' : 'background-color:white'" >
+        <div v-show="config.configDialog" class="max-w-sm p-6 shadow border  border-gray-200 rounded-lg" :style="config.Theme == 'Dark' ? 'background-color:black' : 'background-color:white'" >
             <div class="flex flex-col items-end mr-2">
             <button class="btn" @click.prevent="config.handleConfigDialog" >
                 <XMarkIcon class="w-6 h-6" :style="config.getCurrentColorTxt()"  />

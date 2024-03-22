@@ -49,7 +49,8 @@ onMounted(() => {
     <SideBar  />
     
     <div
-    class="fixed top-0 left-0 w-full h-full flex items-center justify-center transition-opacity duration-500 ease-in-out"
+    class="fixed top-0 left-0 w-full h-full flex items-center justify-center transition-opacity duration-500 ease-in-out "
+    :style="'position: fixed; z-index: 9999;'"
     @click.self.prevent="config.handleConfigDialog"
     v-show="config.configDialog"
     style="background-color: rgba(255, 255, 255, 0.75)"

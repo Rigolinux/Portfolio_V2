@@ -5,6 +5,20 @@ const array = ref(Tecnologies)
 import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+
+// Instala los módulos en Swiper
+const modules = [Navigation, Pagination, Autoplay];
+
+  // Import Swiper styles
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
+  import 'swiper/css/scrollbar';
+  import 'swiper/css/autoplay';
+
+
 </script>
 
 <template>
@@ -12,16 +26,49 @@ const { t } = useI18n();
     <div class="mx-auto max-w-2xl px-4 pt-16 pb-8 sm:px-6 sm:pt-24 lg:max-w-7xl lg:px-8 dark:text-white text-black" >
       <h2 class="text-5xl">{{ t('techDes') }}</h2>
 
-      <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 mt-5">
-        <a v-for="(item,index) in array" :key="index" class="group hover:cursor-pointer">
-          <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-8 ">
-          
-            <img :src="item.image"  class="bject-cover object-center group-hover:opacity-75" height="300" width="300" />
+      
+         
+            <swiper
+    :modules="modules"
+    :slides-per-view="1"
+    :space-between="50"
+    navigation
+    :autoplay="{ delay: 2500, disableOnInteraction: true}"
+    :pagination="{ clickable: true }"
+   
+  >
+        <swiper-slide v-for="(item,index) in array" :key="index">
+          <div class="flex flex-col justify-center items-center  ">
+            <img :src="item.image"  />
+            <div>{{ item.name }}</div>
           </div>
-          <h3 class="mt-4 text-xl "> {{ item.name }} </h3>
-        
-        </a>
-      </div>
-    </div>
+        </swiper-slide>
+
+   </swiper>
+            
+ </div>
+       
+     
+    
+
+
+
+
+
+
   </div>
 </template>
+<style >
+
+.swiper-button-next {
+  
+  color: var(--text-color);
+  
+}
+
+.swiper-button-prev {
+  
+  color:  var(--text-color);
+}
+/* Puedes añadir estilos personalizados para los botones de navegación aquí si es necesario */
+</style>

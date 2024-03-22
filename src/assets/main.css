@@ -36,6 +36,31 @@
         background-color: var(--text-color);
       }
 
-      
+
+
+      .ColJavaScript {
+        color: #f0db4f; /* Amarillo */
+    }
+    
+    .ColTypeScript {
+       color: #007acc; /* Azul */
+    }
+    
+    .ColPython {
+        color: #306998; /* Azul oscuro */
+    }
+    
+    .ColCSharp {
+        color: #68217a; /* Púrpura */
+    }
+    
+    .ColPHP {
+       color: #8993be; /* Azul grisáceo */
+    }
+    
+    .ColRust {
+       color: #000000; /* Negro */
+    }
+    
       
 }

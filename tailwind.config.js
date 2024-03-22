@@ -21,6 +21,7 @@ export default {
         CusPink: "#ff99cc",
         CusGrey: "#c0c0c0",
         CusBlue: "#1338f3",
+    
     }
   },
   plugins: [

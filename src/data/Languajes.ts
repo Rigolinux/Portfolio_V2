@@ -19,7 +19,7 @@ export const Languajes = [
         domain : 60
     },
     {
-        name: 'C#',
+        name: 'C Sharp',
         icon: mdiLanguageCsharp,
         color:  'ColCSharp',
         domain : 50
@@ -34,7 +34,7 @@ export const Languajes = [
         name: 'Rust',
         icon: mdiLanguageRust,
         color: 'ColRust',
-        domain : 40
+        domain : 30
     },
    
 ]

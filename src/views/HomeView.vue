@@ -23,29 +23,29 @@ const modules = [Navigation, Pagination, Autoplay];
 
 <template>
   <div >
-    <div class="mx-auto max-w-2xl px-4 pt-16 pb-8 sm:px-6 sm:pt-24 lg:max-w-7xl lg:px-8 dark:text-white text-black" >
+    <div class="mx-auto max-w-2xl px-4 pt-16 pb-8 sm:px-6 sm:pt-24 lg:max-w-7xl lg:px-8 dark:text-white text-black " >
       <h2 class="text-5xl">{{ t('techDes') }}</h2>
 
-      
+      <div class="flex justify-center items-center text-center">
          
             <swiper
     :modules="modules"
-    :slides-per-view="1"
+    :slides-per-view="2"
     :space-between="50"
     navigation
     :autoplay="{ delay: 2500, disableOnInteraction: true}"
     :pagination="{ clickable: true }"
    
   >
-        <swiper-slide v-for="(item,index) in array" :key="index">
-          <div class="flex flex-col justify-center items-center  ">
-            <img :src="item.image"  />
-            <div>{{ item.name }}</div>
+        <swiper-slide v-for="(item,index) in array" :key="index" style="display: flex; justify-content: center; align-items: center;">
+          <div class="flex justify-center items-center text-center mt-5">
+            <img :src="item.image" height="200"  width="200" />
+            
           </div>
         </swiper-slide>
 
    </swiper>
-            
+          </div>
  </div>
        
      
@@ -69,6 +69,10 @@ const modules = [Navigation, Pagination, Autoplay];
 .swiper-button-prev {
   
   color:  var(--text-color);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--text-color);
 }
 /* Puedes añadir estilos personalizados para los botones de navegación aquí si es necesario */
 </style>

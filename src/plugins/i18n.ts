@@ -1,3 +1,4 @@
+
 import {createI18n} from 'vue-i18n'
 
 export const i18n = createI18n({
@@ -29,6 +30,8 @@ export const i18n = createI18n({
             Databasw_Desc: 'Database design is the process of producing a detailed data model of a database.',
             languajes: 'Languajes',
             Deploy_Desc: 'Deployment and hosting refers to the process of publishing a web application so that it is accessible to the world.',
+            Contact: 'Contact Me',
+            About_Me: 'Student Graduated from the faculty of engineering with more than two years of experience. Passionate about software development with strong background in web and mobile application development, database design and application deployment.'
         },
         es: {
             welcome: 'Bienvenido ',
@@ -54,6 +57,8 @@ export const i18n = createI18n({
             Web_Desc: 'El desarrollo web es el trabajo involucrado en el desarrollo de un sitio web para Internet o una intranet.',
             Databasw_Desc: 'El diseño de bases de datos es el proceso de producir un diseño detallado de la base de datos.',
             Deploy_Desc: 'El despliegue y el hosting se refieren al proceso de publicar una aplicación web para que sea accesible para el mundo.',
+            Contact: 'Contactame',
+            About_Me: 'Estudiante Egresado de la facultad de ingeniería con más de dos años de experiencia. Apasionado por el desarrollo de software con sólidos conocimientos  en el desarrollo de aplicaciones web y móviles, diseño de bases de datos y despliegue de aplicaciones.',
         }
     }
 })

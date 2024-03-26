@@ -2,7 +2,7 @@
 import { useI18n } from "vue-i18n";
 import IconsMdi from "./IconsMdi.vue";
 const { t } = useI18n();
-import { mdiGithub,  mdiLinkedin  } from '@mdi/js';
+import { mdiGithub,  mdiLinkedin, mdiFileDocumentOutline  } from '@mdi/js';
 
 const openInNewTab = (url: string) => {
     window.open(url, '_blank');
@@ -39,6 +39,11 @@ const openInNewTab = (url: string) => {
             @click.prevent="openInNewTab('https://www.linkedin.com/in/bryan-portillo-589a2b21a/')"
         >
                 <IconsMdi type="mdi" :path="mdiLinkedin" />
+        </div>
+        <div class="w-12 rounded-full hoverable-borders h-12 flex justify-center items-center border  hoverable hover:cursor-pointer " :title="t('D_CV')"
+            @click.prevent="openInNewTab('https://dhujijuorqbcfrqbdjqo.supabase.co/storage/v1/object/public/PortfolioBucket/CVS/Bryan_Portillo%20CV%20.pdf?t=2024-03-26T18%3A53%3A42.831Z')"
+        >
+                <IconsMdi type="mdi" :path="mdiFileDocumentOutline" />
         </div>
         
     </div>

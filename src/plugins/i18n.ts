@@ -31,10 +31,12 @@ export const i18n = createI18n({
             languajes: 'Languajes',
             Deploy_Desc: 'Deployment and hosting refers to the process of publishing a web application so that it is accessible to the world.',
             Contact: 'Contact Me',
+            D_CV: 'Download CV',
             About_Me: 'Student Graduated from the faculty of engineering with more than two years of experience. Passionate about software development with strong background in web and mobile application development, database design and application deployment.'
         },
         es: {
             welcome: 'Bienvenido ',
+            D_CV: 'Descargar CV',
             description_1: 'Software Engineer',
             description_2: 'mi nombre is ',
             languajes: 'Lenguajes',

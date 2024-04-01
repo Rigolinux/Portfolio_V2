@@ -21,6 +21,27 @@ const openInNewTab = (url: string) => {
         <img src="https://dhujijuorqbcfrqbdjqo.supabase.co/storage/v1/object/public/PortfolioBucket/portfolioImages/1685065428105.jpg?t=2024-03-07T16%3A53%3A46.713Z"
          alt="profile" class="w-3/4 h-full object-cover rounded-full" />
     </div>
+    <div class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        {{ $t('My_I') }}
+     </div>  
+    <div class="mb-2 flex flex-row justify-around font-bold tracking-tight text-gray-900 dark:text-white">
+        <h5 class="flex justify-start ">
+            <span>
+                {{ t('Spanish') }}
+            </span>
+            <span class="ml-3">
+                {{ t('Native') }}
+            </span>
+        </h5>
+        <h5 class="flex justify-start ">
+            <span >
+                {{ t('English') }}
+            </span>
+            <span class="ml-5">
+                B-2
+            </span>
+        </h5>
+    </div>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 mt-3">{{ t('About_Me') }}</p>
     <div class="flex justify-center">
         <a href="#" class=" w-3/4 flex justify-center items-center px-3 py-2 font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">

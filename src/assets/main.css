@@ -36,7 +36,13 @@
         background-color: var(--text-color);
       }
 
-
+      .custom-focus:focus {
+        
+          border: 2px solid var(--text-color) !important;
+        
+        
+      }
+      
 
       .ColJavaScript {
         color: #f0db4f; /* Amarillo */

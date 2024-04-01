@@ -55,7 +55,7 @@ document.documentElement.style.setProperty('--bg-color', config.Theme == 'Dark' 
           <div class="mt-2" >
             <LanguagesView />
           </div>
-          <div class="mt-2" >
+          <div class="mt-2"  id="contact" >
             <ContactView />
           </div>
         </section>

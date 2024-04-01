@@ -32,6 +32,8 @@ export const i18n = createI18n({
             Deploy_Desc: 'Deployment and hosting refers to the process of publishing a web application so that it is accessible to the world.',
             Contact: 'Contact Me',
             D_CV: 'Download CV',
+            View_LK: 'View LinkedIn Profile',
+            View_GH: 'View GitHub Profile',
             My_I: 'Languages',
             Native: 'Native',
             HistoryExp: 'Education and Work Experience',
@@ -70,6 +72,8 @@ export const i18n = createI18n({
             Native: 'Nativo',
             Send: 'Enviar',
             Describe_P: 'Describe tu proyecto!!',
+            View_LK: 'Ver Perfil de LinkedIn',
+            View_GH: 'Ver Perfil de GitHub',
             About_Me: 'Estudiante Egresado de la facultad de ingeniería con más de dos años de experiencia. Apasionado por el desarrollo de software con sólidos conocimientos  en el desarrollo de aplicaciones web y móviles, diseño de bases de datos y despliegue de aplicaciones.',
         }
     }

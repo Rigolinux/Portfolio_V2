@@ -35,6 +35,7 @@ export const i18n = createI18n({
             My_I: 'Languages',
             Native: 'Native',
             HistoryExp: 'Education and Work Experience',
+            Send: 'Send',
             About_Me: 'Student Graduated from the faculty of engineering with more than two years of experience. Passionate about software development with strong background in web and mobile application development, database design and application deployment.'
         },
         es: {
@@ -66,6 +67,7 @@ export const i18n = createI18n({
             HistoryExp: 'Educación y Experiencia Laboral',
             My_I: 'Idiomas',
             Native: 'Nativo',
+            Send: 'Enviar',
             About_Me: 'Estudiante Egresado de la facultad de ingeniería con más de dos años de experiencia. Apasionado por el desarrollo de software con sólidos conocimientos  en el desarrollo de aplicaciones web y móviles, diseño de bases de datos y despliegue de aplicaciones.',
         }
     }

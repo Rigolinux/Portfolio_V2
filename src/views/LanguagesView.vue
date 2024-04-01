@@ -8,7 +8,7 @@ const { t } = useI18n();
 </script>
 
 <template>
-    <div class="text-4xl font-bold dark:text-white text-black mt-5 mb-3">
+    <div class="text-5xl  dark:text-white text-black mt-5 mb-3">
         {{ t('languajes') }}
     </div>
     

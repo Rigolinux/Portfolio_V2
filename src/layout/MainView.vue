@@ -36,7 +36,7 @@ document.documentElement.style.setProperty('--bg-color', config.Theme == 'Dark' 
 <template>
     <div class="pb-20" :class="config.Theme == 'Dark' ? 'bg-gray-900' : 'bg-white'" >
      
-        <div class="md:fixed md:top-40 p-10 md:left-5 overflow-auto flex items-center justify-center mt-10">
+        <div class="md:fixed md:top-32 p-10 md:left-20 overflow-auto flex items-center justify-center mt-6">
           <CardHeader />
         </div>
         <main class="md:container md:p-15 ">

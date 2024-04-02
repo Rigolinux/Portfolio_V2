@@ -1,12 +1,29 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 import IconsMdi from "./IconsMdi.vue";
+import { useConfigStore } from '@/stores/config';
+
 const { t } = useI18n();
 import { mdiGithub,  mdiLinkedin, mdiFileDocumentOutline  } from '@mdi/js';
 
 const openInNewTab = (url: string) => {
     window.open(url, '_blank');
 }
+
+//https://dhujijuorqbcfrqbdjqo.supabase.co/storage/v1/object/public/PortfolioBucket/CVS/Bryan_Portillo%20CV%20EN.pdf?t=2024-04-02T14%3A37%3A27.871Z english cv
+//https://dhujijuorqbcfrqbdjqo.supabase.co/storage/v1/object/public/PortfolioBucket/CVS/Bryan_Portillo%20CV%20.pdf?t=2024-03-26T18%3A53%3A42.831Z spanish cv
+
+const  config = useConfigStore();
+
+const openCV = () => {
+    if(config.Locale == 'en'){
+        openInNewTab('https://dhujijuorqbcfrqbdjqo.supabase.co/storage/v1/object/public/PortfolioBucket/CVS/Bryan_Portillo%20CV%20EN.pdf?t=2024-04-02T14%3A37%3A27.871Z')
+    }else{
+        openInNewTab('https://dhujijuorqbcfrqbdjqo.supabase.co/storage/v1/object/public/PortfolioBucket/CVS/Bryan_Portillo%20CV%20.pdf?t=2024-03-26T18%3A53%3A42.831Z')
+    }
+}
+
+
 </script>
 
 <template>
@@ -62,7 +79,7 @@ const openInNewTab = (url: string) => {
                 <IconsMdi type="mdi" :path="mdiLinkedin" />
         </div>
         <div  class="w-12 rounded-full hoverable-borders h-12 flex justify-center items-center border  hoverable hover:cursor-pointer " :title="t('D_CV')"
-            @click.prevent="openInNewTab('https://dhujijuorqbcfrqbdjqo.supabase.co/storage/v1/object/public/PortfolioBucket/CVS/Bryan_Portillo%20CV%20.pdf?t=2024-03-26T18%3A53%3A42.831Z')"
+            @click.prevent="openCV()"
         >
                 <IconsMdi  type="mdi" :path="mdiFileDocumentOutline" />
         </div>

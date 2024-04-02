@@ -33,9 +33,9 @@ const sendEmail = async () => {
 </script>
 
 <template>
-    <div class="dark:text-white mt-5">
+    <div class="dark:text-white mt-5 ml-10 lg:w-full w-4/5 lg:ml-0 md:ml-0  ">
         <h1 class="text-5xl">{{ t('Contact') }}</h1>
-        <p>Send us a message!</p>
+        <p>{{ t('Send_Message') }}</p>
         <form @submit.prevent="sendEmail" >
             <div class="mt-4">
                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="name">Name:</label>

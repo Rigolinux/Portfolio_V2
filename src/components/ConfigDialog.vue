@@ -73,7 +73,7 @@ const setConfigValues = () => {
 
 <template>
     <transition name="dialog-fade" mode="out-in">
-        <div v-show="config.configDialog" class="max-w-sm p-6 shadow border  border-gray-200 rounded-lg" :style="config.Theme == 'Dark' ? 'background-color:black' : 'background-color:white'" >
+        <div v-show="config.configDialog" class="max-w-sm p-6 shadow border  border-gray-200 rounded-lg dark:bg-gray-900 bg-white"  >
             <div class="flex flex-col items-end mr-2">
             <button class="btn" @click.prevent="config.handleConfigDialog" >
                 <XMarkIcon class="w-6 h-6" :style="config.getCurrentColorTxt()"  />
@@ -88,8 +88,8 @@ const setConfigValues = () => {
                 <label for="lenguaje" class="block text-sm font-medium  text-gray-700 dark:text-gray-400"
                 :style="config.getCurrentColorTxt()"
                 >{{ t('Language') }}</label>
-                <select v-model="config.Locale" id="lenguaje" name="lenguaje" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
-                :style="`${config.getCurrentColorTxt()} ;${config.getCurrentColorBg()}`"
+                <select v-model="config.Locale" id="lenguaje" name="lenguaje" class="mt-1 block w-full dark:text-white dark:bg-gray-900 bg-white pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
+               
                 >
                     <option v-for="lenguaje in Lenguajes" :key="lenguaje.id" :value="lenguaje.value">{{ lenguaje.name }}</option>
                 </select>

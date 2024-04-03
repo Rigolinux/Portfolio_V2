@@ -39,6 +39,7 @@ export const i18n = createI18n({
             HistoryExp: 'Education and Work Experience',
             Describe_P: 'Describe your project!!',
             Send_Message: 'Send me a message!',
+            Services: 'Services',
             Send: 'Send',
             About_Me: 'Student Graduated from the faculty of engineering with more than two years of experience. Passionate about software development with strong background in web and mobile application development, database design and application deployment.'
         },
@@ -75,6 +76,7 @@ export const i18n = createI18n({
             Describe_P: 'Describe tu proyecto!!',
             View_LK: 'Ver Perfil de LinkedIn',
             View_GH: 'Ver Perfil de GitHub',
+            Services: 'Servicios',
             Send_Message: 'Enviame un mensaje!',
             About_Me: 'Estudiante Egresado de la facultad de ingeniería con más de dos años de experiencia. Apasionado por el desarrollo de software con sólidos conocimientos  en el desarrollo de aplicaciones web y móviles, diseño de bases de datos y despliegue de aplicaciones.',
         }

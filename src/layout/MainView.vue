@@ -41,9 +41,9 @@ document.documentElement.style.setProperty('--bg-color', config.Theme == 'Dark' 
         <CardHeader />
       </div>
       <main class="md:container md:p-15 ">     
-        <section class="md:w-1/2 md:ml-auto  sm:w-full pt-10" id="experience">         
+        <section class="md:w-1/2 md:ml-auto  sm:w-full pt-10"  id="home" >         
             <ExperienceView />
-            <div class="mt-2" id="home" >
+            <div class="mt-2" id="experience" >
               <HomeView />
             </div>
             <div class="mt-2" id="history" >

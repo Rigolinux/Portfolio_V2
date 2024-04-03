@@ -1,17 +1,17 @@
 import {mdiAccount, mdiHome,mdiCodeBlockTags,mdiWalletTravel ,mdiEmailBox,mdiAnimationOutline    }from '@mdi/js';
 export const MenuOptions = [
-    {   
-        name: 'Resume',
-        Icon: mdiAccount,
-        link: 'experience'
-    },
     {
         name: 'Home',
         Icon: mdiHome,
         link: 'home'
     },
+    {   
+        name: 'Tech',
+        Icon: mdiAccount,
+        link: 'experience'
+    },
     {
-        name: 'history',
+        name: 'Ed_Exp',
         Icon: mdiWalletTravel,
         link: 'history'
     },
@@ -21,7 +21,7 @@ export const MenuOptions = [
         link: 'especialization'
     },
     {
-        name: 'Languajes',
+        name: 'Pro_Lenguajes',
         Icon: mdiCodeBlockTags,
         link: 'languajes'
     },  

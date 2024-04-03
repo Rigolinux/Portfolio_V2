@@ -9,7 +9,7 @@ const { t } = useI18n();
 
 <template>
     <div class="text-5xl  dark:text-white text-black mt-5 mb-3  lg:w-full w-4/5 ">
-        {{ t('languajes') }}
+        {{ t('Pro_Lenguajes') }}
     </div>
     
     <div class="ml-10 lg:w-full w-4/5 lg:ml-0 md:ml-0 " v-for="(item, index) in Languajes"  :key="index">

@@ -20,16 +20,16 @@ onMounted(() => {
   if (storedConfigOptions) {
     const configOptions = JSON.parse(storedConfigOptions);
     if (configOptions) {
-      locale.value = configOptions.locale ? configOptions.locale : 'es';
+      locale.value = configOptions.locale ? configOptions.locale : 'en';
       config.setLocale(locale.value);
     }
     else {
-      locale.value = 'es';
+      locale.value = 'en';
       config.setLocale(locale.value);
     }
   }
   else {
-    locale.value = 'es';
+    locale.value = 'en';
     config.setLocale(locale.value);
   }
 });

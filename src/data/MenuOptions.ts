@@ -1,4 +1,4 @@
-import {mdiAccount, mdiHome,mdiCodeBlockTags,mdiWalletTravel ,mdiEmailBox,mdiAnimationOutline    }from '@mdi/js';
+import {mdiMonitorDashboard , mdiHome,mdiCodeBlockTags,mdiWalletTravel ,mdiEmailBox,mdiAnimationOutline    }from '@mdi/js';
 export const MenuOptions = [
     {
         name: 'Home',
@@ -7,7 +7,7 @@ export const MenuOptions = [
     },
     {   
         name: 'Tech',
-        Icon: mdiAccount,
+        Icon: mdiMonitorDashboard ,
         link: 'experience'
     },
     {

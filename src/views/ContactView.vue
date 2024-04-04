@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
 import { ref } from 'vue';
 
 import { useI18n } from 'vue-i18n';
@@ -23,9 +24,21 @@ const sendEmail = async () => {
             form.value,
             import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         );
-        alert('Email sent!');
+        Swal.fire({
+            icon: 'success',
+            title: t('Success'),
+            text: t('Success_Message'),
+            showConfirmButton: false,
+            timer: 1500
+        });
     } catch (error) {
-        alert('An error occurred. Please try again later.');
+        Swal.fire({
+            icon: 'error',
+            title: t('Error'),
+            text: t('Error_Message'),
+            showConfirmButton: false,
+            timer: 1500
+        });
     }
 };
 

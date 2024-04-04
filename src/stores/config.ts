@@ -10,7 +10,7 @@ interface ConfigOptions {
 }
 
 export const useConfigStore = defineStore('ConfigDialog', () => {
-    const textColor: Ref<string> = ref('CusGreen');
+    const textColor: Ref<string> = ref('#28e98c');
     const configDialog: Ref<boolean> = ref(false);
     const Locale = ref<string>('');
     const Theme = ref<string>('Light');
